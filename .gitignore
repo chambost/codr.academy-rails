@@ -32,3 +32,4 @@ yarn-debug.log*
 
 Gemfile.lock
 yarm.lock
+/config/credentials.yml.enc
