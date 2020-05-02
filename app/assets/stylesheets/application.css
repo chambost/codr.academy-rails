@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap');
+
+body {
+    margin: 0;
+}
+
+h1 {
+    background-image: url("irvan-smith-5eBW5GomfhY-unsplash.jpg"); /* Photo by Irvan Smith on Unsplash */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-family: 'Anonymous Pro', monospace;
+    text-shadow: 0px 0px 1rem orange;
+    font-size: 3.5rem;
+    margin: 1rem 0rem;
+    padding: 1rem 3rem;
+}
