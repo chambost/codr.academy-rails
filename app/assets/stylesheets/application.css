@@ -21,7 +21,7 @@ body {
 }
 
 h1 {
-    background-image: url("irvan-smith-5eBW5GomfhY-unsplash.jpg"); /* Photo by Irvan Smith on Unsplash */
+    background-image: asset-url("irvan-smith-5eBW5GomfhY-unsplash.jpg", image); /* Photo by Irvan Smith on Unsplash */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
