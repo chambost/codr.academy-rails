@@ -36,6 +36,11 @@
     <%= form.datetime_select :time %>
   </div>
 
+  <div>
+      <%= form.label :picture %>
+      <%= form.file_field :picture, accept: "image/png,image/gif,image/jpeg, image/jpg, image/webp" %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
