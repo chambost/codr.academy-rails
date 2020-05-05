@@ -18,6 +18,7 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0, 20]
       user.name = auth["info"]["name"]
       user.username = auth["info"]["nickname"]
+      user.avatar_url = auth["info"]["image"]
       user.github = "https://github.com/#{user.username}"
       # user.name = auth.info.name   # assuming the user model has a name
       # user.image = auth.info.image # assuming the user model has an image
