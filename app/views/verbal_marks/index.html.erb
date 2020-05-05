@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Verbal Marks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Post</th>
+      <th>Comment</th>
+      <th>Verbal mark</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @verbal_marks.each do |verbal_mark| %>
+      <tr>
+        <td><%= verbal_mark.user_id %></td>
+        <td><%= verbal_mark.post_id %></td>
+        <td><%= verbal_mark.comment_id %></td>
+        <td><%= verbal_mark.verbal_mark %></td>
+        <td><%= link_to 'Show', verbal_mark %></td>
+        <td><%= link_to 'Edit', edit_verbal_mark_path(verbal_mark) %></td>
+        <td><%= link_to 'Destroy', verbal_mark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Verbal Mark', new_verbal_mark_path %>

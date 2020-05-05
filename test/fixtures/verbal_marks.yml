@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  post: one
+  comment: one
+  verbal_mark: MyString
+
+two:
+  user: two
+  post: two
+  comment: two
+  verbal_mark: MyString
