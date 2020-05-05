@@ -1,0 +1,37 @@
+<%= form_with(model: verbal_mark, local: true) do |form| %>
+  <% if verbal_mark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(verbal_mark.errors.count, "error") %> prohibited this verbal_mark from being saved:</h2>
+
+      <ul>
+        <% verbal_mark.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :post_id %>
+    <%= form.text_field :post_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment_id %>
+    <%= form.text_field :comment_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :verbal_mark %>
+    <%= form.text_field :verbal_mark %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

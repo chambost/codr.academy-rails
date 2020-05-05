@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @verbal_mark.user_id %>
+</p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @verbal_mark.post_id %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @verbal_mark.comment_id %>
+</p>
+
+<p>
+  <strong>Verbal mark:</strong>
+  <%= @verbal_mark.verbal_mark %>
+</p>
+
+<%= link_to 'Edit', edit_verbal_mark_path(@verbal_mark) %> |
+<%= link_to 'Back', verbal_marks_path %>
