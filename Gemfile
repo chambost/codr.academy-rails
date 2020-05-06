@@ -56,3 +56,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise", "~> 4.7"
 
 gem "omniauth-github", "~> 1.4"
+
+gem 'pg_search'
+
+# gem 'simple_form'
+gem "aws-sdk-s3", "~> 1.63"

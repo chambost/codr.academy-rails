@@ -1,0 +1,20 @@
+<section class="top-nav">
+
+<% if user_signed_in? %>
+<div id="logout">
+
+</div>
+<div id="username">
+<%= current_user %>
+<%= current_user.email %>
+
+<%= link_to "Logout", destroy_user_session_path, method: "delete" %>
+</div>
+
+<% else %>
+<div id="login">
+<%= link_to "Login", new_user_session_path %>
+<%= link_to "Sign up", new_user_registration_path %>
+</div>
+<% end %>
+</section>

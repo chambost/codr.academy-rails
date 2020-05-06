@@ -1,0 +1,11 @@
+<h2>Search Post</h2>
+
+
+<% form_with method: :get, do |f| %>
+    <% form.label , "Key word" %>
+    <% form.text_field(:search, :word) %>
+
+    <% form.submit "Search" %>
+    
+
+<% end %>
