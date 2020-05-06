@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  
+  before_action :authenticate_user!, only: [:new, :create]
+
   # GET /posts
   # GET /posts.json
   def index
@@ -24,11 +25,11 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-
     @post = Post.create(post_params)
 
     # for picture attachments (attaching picture to the model)
     @post.picture.attach(params[:post][:picture])
+    @post.user = current_user
 
     respond_to do |format|
       if @post.save
