@@ -6,6 +6,19 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+
+    if params["search"]
+      # url appending: /posts?search[word]=word_to_be_searched
+      # url appending: /posts?search[word]=[word1_to_be_searched,word2_to_be_searched]
+      @filter = params["search"]["word"]
+      @posts = Post.all.post_search("#{@filter}")
+    else
+      @posts = Post.all
+    end
+    respond_to do |format|
+      format.html
+      format.js
+    end  
   end
 
   # GET /posts/1
@@ -67,6 +80,11 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    # redirect_to "/search.html"
+    
   end
 
   private

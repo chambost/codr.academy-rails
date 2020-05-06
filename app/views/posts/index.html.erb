@@ -1,4 +1,32 @@
 <p id="notice"><%= notice %></p>
+<%
+=begin %>
+<%= simple_form_for :search, url: posts_path, method: "GET", remote: true do |f| %>
+  <%= f.input :title, label: "Title",  collection: $titles, as: :check_boxes, onClick: "test"%>
+  <%= f.input :content, label: "Content", collection: $contents, as: :check_boxes  %>
+  <%= link_to "Show Post", posts_path  %>
+<% end %>
+
+
+ <div id="posts_search">
+   <%= render 'search_post', posts: @posts %>
+ </div>
+
+ <script type="text/javascript">
+  var checkBoxes = document.querySelectorAll(".form-check-input");
+  var form = document.querySelector('form');
+  
+  for (const check of checkBoxes) {
+  check.addEventListener( 'change', function() {
+    Rails.fire(form, 'submit');
+  });
+  }
+</script>
+
+<% 
+=end %>
+
+
 
 <h1>Posts</h1>
 
@@ -17,7 +45,7 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
+        <td><b><%= post.title %><b/></td>
         <td><%= post.content %></td>
         <td><%= image_tag post.user.avatar_url, size: "32x32", alt: post.user.username %></td>
         <td><%= post.edited %></td>
@@ -33,3 +61,4 @@
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+
