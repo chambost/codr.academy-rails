@@ -83,7 +83,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    # redirect_to "/search.html"
+    # redirect_to "/posts/search"
     
   end
 

@@ -1,0 +1,21 @@
+<h2>Search in Posts</h2>
+
+
+<form method='GET'>
+    
+    <ul id="explain">
+        <li>Input word to be searched</li>
+        <li>Prefix ! to negate</li>
+        <li>Square-bracket [] for multiple words, seperated with comma, without space</li>   
+    <ul>
+    
+    <br>
+    <label>Word to be searched:</label>
+    <input type="text" name="word" id='word' />
+    
+    <input type="button" onclick="window.location.href = '/posts?search[word]=' + document.getElementById('word').value;" value="go">
+</form>
+
+
+<div id="result">
+</div>
