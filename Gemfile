@@ -60,3 +60,4 @@ gem "omniauth-github", "~> 1.4"
 gem 'pg_search'
 
 # gem 'simple_form'
+gem "aws-sdk-s3", "~> 1.63"

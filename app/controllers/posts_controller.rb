@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_users! only [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create]
 
   # GET /posts
   # GET /posts.json
@@ -38,13 +38,16 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+    @post = Post.create(post_params)
+
+    # for picture attachments (attaching picture to the model)
+    @post.picture.attach(params[:post][:picture])
     @post.user = current_user
 
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
+       format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -55,6 +58,9 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    # attach pic via an update
+    @post.picture.attach(params[:post][:picture])
+
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -89,6 +95,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :content, :user, :edited, :time)
+      params.require(:post).permit(:title, :content, :edited, :time)
     end
 end

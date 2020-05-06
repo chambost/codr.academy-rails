@@ -47,7 +47,7 @@
       <tr>
         <td><b><%= post.title %><b/></td>
         <td><%= post.content %></td>
-        <td><%= post.user %></td>
+        <td><%= image_tag post.user.avatar_url, size: "32x32", alt: post.user.username %></td>
         <td><%= post.edited %></td>
         <td><%= post.time %></td>
         <td><%= link_to 'Show', post %></td>

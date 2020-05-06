@@ -28,4 +28,5 @@ pg_search_scope :post_search,
   # using: :dmetaphone
 
 
+has_one_attached :picture
 end
