@@ -1,11 +1,24 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_users! only [:new, :create]
+  # before_action :authenticate_users! only [:new, :create]
 
   # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all
+
+    if params["search"]
+      # url appending: /posts?search[word]=word_to_be_searched
+      # url appending: /posts?search[word]=[word1_to_be_searched,word2_to_be_searched]
+      @filter = params["search"]["word"]
+      @posts = Post.all.post_search("#{@filter}")
+    else
+      @posts = Post.all
+    end
+    respond_to do |format|
+      format.html
+      format.js
+    end  
   end
 
   # GET /posts/1
@@ -26,7 +39,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    @post.user = current_user.id
+    @post.user = current_user
 
     respond_to do |format|
       if @post.save
@@ -61,6 +74,11 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    # redirect_to "/search.html"
+    
   end
 
   private

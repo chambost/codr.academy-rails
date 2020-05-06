@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_091910) do
+ActiveRecord::Schema.define(version: 2020_05_06_002708) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "fuzzystrmatch"
   enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -78,5 +79,20 @@ ActiveRecord::Schema.define(version: 2020_05_04_091910) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "verbal_marks", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
+    t.bigint "comment_id", null: false
+    t.string "verbal_mark"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comment_id"], name: "index_verbal_marks_on_comment_id"
+    t.index ["post_id"], name: "index_verbal_marks_on_post_id"
+    t.index ["user_id"], name: "index_verbal_marks_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "verbal_marks", "comments"
+  add_foreign_key "verbal_marks", "posts"
+  add_foreign_key "verbal_marks", "users"
 end
