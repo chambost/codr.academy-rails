@@ -11,7 +11,8 @@
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>Codr:</strong>
+  <%= image_tag @post.user.avatar_url, size: "32x32", alt: @post.user.username %>
   <%= @post.user %>
 </p>
 
@@ -25,7 +26,7 @@
   <%= @post.created_at %>
 </p>
 
-<%= image_tag @post.picture, width: "100" if @post.picture.attached?   %>
+<%= image_tag @post.picture, width: "256" if @post.picture.attached?   %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

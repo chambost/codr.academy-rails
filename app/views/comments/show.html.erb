@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @comment.user %>
+  <strong>Codr:</strong>
+  <%= image_tag @comment.user.avatar_url, size: "32x32", alt: @comment.user.username %>
 </p>
 
 <p>
