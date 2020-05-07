@@ -39,6 +39,21 @@
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
+      <% post.comments.each do |comment| %>
+      <tr>
+        <td colspan="9">
+          • <%= image_tag comment.user.avatar_url, size: "32x32", alt: comment.user.username %> <%= comment.content %>
+        </td>
+      </tr>
+      <% end %>
+      <tr>
+        <td colspan="9">
+          • New Comment
+        </td>
+      </tr>
+      
+      
+      <tr>
     <% end %>
   </tbody>
 </table>
