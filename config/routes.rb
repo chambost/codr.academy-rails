@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   # get '/posts/search', to: 'posts#search', as: 'search'
   resources :verbal_marks
   resources :comments
-  resources :posts
+  resources :posts do
+    post '/comments', to: "comments#create", as: "comments"
+    patch '/comments/:comment_id', to: "comments#update"
+    delete '/comments/:comment_id', to: "comments#destroy"
+    get '/comments/:comment_id', to: "comments#show"
+  end
   
   resources :users, path: 'codrs', as: 'users'
   # get '/codrs', to: 'users#index', as 'codrs'
