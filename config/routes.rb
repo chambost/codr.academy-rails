@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :posts
   
-  resources :users, path: 'codrs', as: 'codrs'
+  resources :users, path: 'codrs', as: 'users'
   # get '/codrs', to: 'users#index', as 'codrs'
   root 'posts#index'
   get '/profile', to: 'home_page#profile', as: 'profile' 
