@@ -32,3 +32,7 @@ h1 {
     margin: 1rem 0rem;
     padding: 1.5rem 3rem;
 }
+
+input[type="radio"] {
+    display: inline-block;
+}
