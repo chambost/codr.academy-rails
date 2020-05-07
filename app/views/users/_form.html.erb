@@ -23,7 +23,10 @@
 
   <div class="field">
     <%= form.label :cohort %>
-    <%= form.text_field :cohort %>
+    <%= form.radio_button :cohort, "Brisbane" %>
+    <%= form.radio_button :cohort, "Melbourne" %>
+    <%= form.radio_button :cohort, "Sydney" %>
+    # <%= form.text_field :cohort %>
   </div>
 
   <div class="field">
