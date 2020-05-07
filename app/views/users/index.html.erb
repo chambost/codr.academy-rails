@@ -19,7 +19,7 @@
 
   <tbody>
     <% @users.each do |user| %>
-      <% if not (user.cohort == "Brisbane" or user.cohort == "Melbourne" or user.cohort == "Sydney" %>
+      <% if not (user.cohort == "Brisbane" or user.cohort == "Melbourne" or user.cohort == "Sydney") %>
       <tr>
         <td><%= user.username %></td>
         <td><%= user.name %></td>
