@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   resources :users, path: 'codrs', as: 'users'
   # get '/codrs', to: 'users#index', as 'codrs'
   root 'posts#index'
-  get '/profile', to: 'home_page#profile', as: 'profile' 
-  get '/community', to: 'users#index', as: 'community'
-  get '/chatroom', to: 'home_page#chatroom', as: 'chatroom' 
+  # get '/profile', to: 'home_page#profile', as: 'profile' 
+  # get '/chatroom', to: 'home_page#chatroom', as: 'chatroom' 
   get '/guidelines', to: 'home_page#guidelines', as: 'guidelines' 
 
   get '/filters', to: 'filters#index'
