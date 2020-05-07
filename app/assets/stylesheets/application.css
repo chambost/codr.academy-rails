@@ -33,6 +33,6 @@ h1 {
     padding: 1.5rem 3rem;
 }
 
-input[type="radio"] {
+label[for^="cohort"] {
     display: inline-block;
 }
