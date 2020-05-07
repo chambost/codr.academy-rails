@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  get '/posts/search', to: 'posts#search'
+  get '/posts/search', to: 'posts#search', as: 'search'
   resources :verbal_marks
   resources :comments
   resources :posts
