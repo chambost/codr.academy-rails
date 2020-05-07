@@ -36,3 +36,7 @@ h1 {
 label[for^="cohort"] {
     display: inline-block;
 }
+
+input[name^="comment"] {
+    display: inline-block;
+}

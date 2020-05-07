@@ -49,6 +49,10 @@
       <tr>
         <td colspan="9">
           • New Comment
+          <%= form_with(model: Comment.new, local: true, url: "/posts/#{post.id}/comments") do |form| %>
+              <%= form.text_field :content %>
+            </div>
+          <% end %>
         </td>
       </tr>
       
