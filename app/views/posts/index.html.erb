@@ -36,9 +36,8 @@
       <th>Title</th>
       <th>Content</th>
       <th>Image</th>
-      <th>Codr</th>
-      <th>Edited</th>
       <th>Time</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -49,12 +48,15 @@
         <td><b><%= post.title %><b/></td>
         <td><%= post.content %></td>
         <td><%= image_tag post.picture, width: 256 if post.picture.attached? %></td>
-        <td><%= image_tag post.user.avatar_url, size: "32x32", alt: post.user.username %></td>
+       
         <td><%= post.edited %></td>
-        <td><%= post.time %></td>
+        <td><%= post.created_at %></td>
         <td><%= link_to 'Show', post %></td>
+
+        <% if post.user_id == current_user.id %>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

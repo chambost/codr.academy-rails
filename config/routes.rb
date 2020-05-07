@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :posts
   
   resources :users
-  root 'home_page#index'
+  root 'posts#index'
   get '/profile', to: 'home_page#profile', as: 'profile' 
   get '/community', to: 'users#index', as: 'community'
   get '/chatroom', to: 'home_page#chatroom', as: 'chatroom' 

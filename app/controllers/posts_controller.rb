@@ -33,6 +33,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+if @post.user_id != current_user.id
+  redirect_to posts_path, notice: "not allowed"
+end
   end
 
   # POST /posts
