@@ -22,7 +22,7 @@
 
 <p>
   <strong>Time:</strong>
-  <%= @post.time %>
+  <%= @post.created_at %>
 </p>
 
 <%= image_tag @post.picture, width: "100" if @post.picture.attached?   %>
