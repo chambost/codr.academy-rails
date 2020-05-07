@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :posts
   
   resources :users
+  get '/codrs', to 'users#index'
   root 'posts#index'
   get '/profile', to: 'home_page#profile', as: 'profile' 
   get '/community', to: 'users#index', as: 'community'
