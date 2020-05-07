@@ -53,7 +53,7 @@
         <td><%= post.created_at %></td>
         <td><%= link_to 'Show', post %></td>
 
-        <% if post.user_id == current_user.id %>
+        <% if user_signed_in? and post.user_id == current_user.id %>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
