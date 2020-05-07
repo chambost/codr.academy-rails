@@ -28,8 +28,10 @@
         <td><%= user.github %></td>
         <td><%= user.linked_in %></td>
         <td><%= link_to 'Show', user %></td>
+        <% if user_signed_in? and user.id == current_user.id %>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
       <% end %>
     <% end %>
@@ -62,8 +64,10 @@
         <td><%= user.github %></td>
         <td><%= user.linked_in %></td>
         <td><%= link_to 'Show', user %></td>
+        <% if user_signed_in? and user.id == current_user.id %>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
       <% end %>
     <% end %>
@@ -96,8 +100,10 @@
         <td><%= user.github %></td>
         <td><%= user.linked_in %></td>
         <td><%= link_to 'Show', user %></td>
+        <% if user_signed_in? and user.id == current_user.id %>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
       <% end %>
     <% end %>
@@ -130,8 +136,10 @@
         <td><%= user.github %></td>
         <td><%= user.linked_in %></td>
         <td><%= link_to 'Show', user %></td>
+        <% if user_signed_in? and user.id == current_user.id %>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
       <% end %>
     <% end %>
