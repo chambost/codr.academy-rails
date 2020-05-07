@@ -85,10 +85,11 @@ end
     end
   end
 
-  def search
-    # redirect_to "/posts/search"
+  # new search page is moving to '/search' as another controller
+  # def search
+  #   # redirect_to "/posts/search"
     
-  end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

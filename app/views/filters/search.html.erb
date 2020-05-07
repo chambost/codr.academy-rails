@@ -1,0 +1,23 @@
+<head>
+</head>
+
+<body>
+<h2>Search in Posts</h2>
+<form method='GET'>
+    
+    <ul id="explain">
+        <li>Input word to be searched</li>
+        <li>Prefix ! to negate</li>
+        <li>Square-bracket [] for multiple words, seperated with comma, without space</li>   
+    <ul>   
+    <br>
+
+    
+<%= form_with(url: '/filters', mehtod: "get") do %>
+    <%= label_tag(:label, "Word to be searched for") %>
+    <%= text_field_tag(:search) %>
+    <%= submit_tag("search") %>
+<% end %>
+
+
+</body>
