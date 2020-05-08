@@ -40,3 +40,16 @@ label[for^="cohort"] {
 input[name^="comment"] {
     display: inline-block;
 }
+
+.navbar2 {
+    background-color: orange;
+    padding: 1vw;
+
+    color: black;
+}
+
+.top-nav {
+    padding: 0.5vw;
+    border-bottom: 1px dashed orange;
+    
+}
