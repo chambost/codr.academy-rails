@@ -16,9 +16,9 @@
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="field content_text" id='content_text'>
     <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.text_area :content, cols: 50, rows: 15 %>
   </div>
 
   <%# <div class="field"> %>
