@@ -1,19 +1,21 @@
-<section class="navbar2">
+<section class="navbar2 container-fluid">
 
 <%# if we end up getting these pages workign we will just delete all this %>
 
 <%# <% if user_signed_in? %>
-        <%= link_to "Home", posts_path %>
-        <%= link_to "Search", filters_path %>
-        <%= link_to "Codrs", users_path %>
+        <div class='row'>
+        <div class='col'><%= link_to "Home", posts_path %></div>
+        <div class='col'><%= link_to "Search", filters_path %></div>
+        <div class='col'><%= link_to "Codrs", users_path %></div>
         
         <%# <%= link_to "Profile", profile_path %> 
         <%# <%= link_to "Chatroom", chatroom_path %>  
-        <%= link_to "Rules & Guidelines", guidelines_path %>
+        <div class='col'><%= link_to "Rules & Guidelines", guidelines_path %></div>
 <%# <% else %>
         <%# <%= link_to "Login", new_user_session_path %>
         <%# <%= link_to "Sign up", new_user_registration_path %> 
 <%# <% end %>
+        </div>
 </section>
 
 

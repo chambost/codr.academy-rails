@@ -61,3 +61,5 @@ gem 'pg_search'
 
 # gem 'simple_form'
 gem "aws-sdk-s3", "~> 1.63"
+
+gem 'bootstrap'

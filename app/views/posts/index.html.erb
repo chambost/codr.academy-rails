@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!--- <p id="notice"><%# notice %></p> --->
 <%
 =begin %>
 # (Previous code here was used to test asynchro functionality of rails, but didn't work and commented anyway)
@@ -7,9 +7,9 @@
 
 
 
-<h1>Posts</h1>
+<h1 class='container-fluid mb-0 mt-0'>Posts</h1>
 
-<table>
+<table class='container-fluid table-responsive-lg table-striped table-bordered table-hover'>
   <thead class='posts_head'>
     <tr>
       <th>Title</th>
@@ -29,7 +29,7 @@
         <td><b><%= post.title %></b></td>
         <td><%= post.content %></td>
         <td><%= image_tag post.picture, width: 256 if post.picture.attached? %></td>
-       <td><%= image_tag post.user.avatar_url, size: "32x32", alt: post.user.username %></td> 
+       <td><%= image_tag post.user.avatar_url, size: "32x32", alt: post.user.username %></td>
         <td><%= post.edited %></td>
         <td><%= post.created_at %></td>
         <td><%= link_to 'Show', post %></td>
