@@ -9,9 +9,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    #got to change this. luke
+
     @users = User.all
+
   end
+
 
   # GET /users/1
   # GET /users/1.json
@@ -73,6 +75,8 @@ class UsersController < ApplicationController
     end
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -84,3 +88,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:username, :name, :cohort, :point, :github, :linked_in)
     end
 end
+

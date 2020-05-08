@@ -28,8 +28,8 @@
       <tr>
         <td><b><%= post.title %></b></td>
         <td><%= post.content %></td>
-        <td><%# image_tag post.picture, width: 256 if post.picture.attached? %></td>
-       <td><%# image_tag post.user.avatar_url, size: "32x32", alt: post.user.username %></td> 
+        <td><%= image_tag post.picture, width: 256 if post.picture.attached? %></td>
+       <td><%= image_tag post.user.avatar_url, size: "32x32", alt: post.user.username %></td>
         <td><%= post.edited %></td>
         <td><%= post.created_at %></td>
         <td><%= link_to 'Show', post %></td>
@@ -42,7 +42,7 @@
       <% post.comments.each do |comment| %>
       <tr>
         <td colspan="9">
-          • <%# image_tag comment.user.avatar_url, size: "32x32", alt: comment.user.username %> <%= comment.content %>
+          • <%= image_tag comment.user.avatar_url, size: "32x32", alt: comment.user.username %> <%= comment.content %>
         </td>
       </tr>
       <% end %>

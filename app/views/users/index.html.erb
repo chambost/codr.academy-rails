@@ -24,9 +24,11 @@
         <td><%= user.username %></td>
         <td><%= user.name %></td>
         <td><%= user.cohort %></td>
-        <td><%= image_tag user.avatar_url, size: "32x32", alt: user.username %></td>
-        <td><%= user.github %></td>
-        <td><%= user.linked_in %></td>
+        <td><%= image_tag user.avatar_url, size: "32x32", alt: user.username %></td> 
+        <td><%= link_to user.github, user.github %></td>
+        <% unless user.linked_in == nil %>
+        <td><%= link_to user.linked_in, user.linked_in.slice(0,8) == "https://" ? user.linked_in : "https://#{user.linked_in}" %></td>
+        <% end %>
         <td><%= link_to 'Show', user %></td>
         <% if user_signed_in? and user.id == current_user.id %>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
@@ -37,6 +39,7 @@
     <% end %>
   </tbody>
 </table>
+
 
 <h2>Melbourne Cohort</h2>
 
@@ -60,9 +63,11 @@
         <td><%= user.username %></td>
         <td><%= user.name %></td>
         <td><%= user.cohort %></td>
-        <td><%= image_tag user.avatar_url, size: "32x32", alt: user.username %></td>
-        <td><%= user.github %></td>
-        <td><%= user.linked_in %></td>
+       <td><%= image_tag user.avatar_url, size: "32x32", alt: user.username %></td>
+        <td><%= link_to user.github, user.github %></td>
+        <% unless user.linked_in == nil %>
+        <td><%= link_to user.linked_in, user.linked_in.slice(0,8) == "https://" ? user.linked_in : "https://#{user.linked_in}" %></td>
+        <% end %>
         <td><%= link_to 'Show', user %></td>
         <% if user_signed_in? and user.id == current_user.id %>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
@@ -96,9 +101,11 @@
         <td><%= user.username %></td>
         <td><%= user.name %></td>
         <td><%= user.cohort %></td>
-        <td><%= image_tag user.avatar_url, size: "32x32", alt: user.username %></td> %>
-        <td><%= user.github %></td>
-        <td><%= user.linked_in %></td>
+        <td><%= image_tag user.avatar_url, size: "32x32", alt: user.username %></td>
+        <td><%= link_to user.github, user.github %></td>
+        <% unless user.linked_in == nil %>
+        <td><%= link_to user.linked_in, user.linked_in.slice(0,8) == "https://" ? user.linked_in : "https://#{user.linked_in}" %></td>
+        <% end %>
         <td><%= link_to 'Show', user %></td>
         <% if user_signed_in? and user.id == current_user.id %>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
@@ -132,9 +139,13 @@
         <td><%= user.username %></td>
         <td><%= user.name %></td>
         <td><%= user.cohort %></td>
-        <td><%= image_tag user.avatar_url, size: "32x32", alt: user.username %></td>
-        <td><%= user.github %></td>
-        <td><%= user.linked_in %></td>
+        <td><%= image_tag user.avatar_url, size: "32x32", alt: user.username %></td> 
+        <td><%= link_to user.github, user.github %></td>
+
+        <% unless user.linked_in == nil %>
+        <td><%= link_to user.linked_in, user.linked_in.slice(0,8) == "https://" ? user.linked_in : "https://#{user.linked_in}" %></td>
+        <% end %>
+
         <td><%= link_to 'Show', user %></td>
         <% if user_signed_in? and user.id == current_user.id %>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
